@@ -1,3 +1,6 @@
+import 'dart:ffi';
+
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:survit/constants/color_constant.dart';
