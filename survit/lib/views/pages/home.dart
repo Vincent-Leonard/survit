@@ -2,6 +2,7 @@ part of 'pages.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
+  static const String routeName = "Home";
 
   @override
   _HomeState createState() => _HomeState();
@@ -10,6 +11,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      resizeToAvoidBottomInset: true,
+    );
   }
 }

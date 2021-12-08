@@ -47,26 +47,44 @@ class _LoginState extends State<Login> {
                     const SizedBox(height: 30),
                     Text(
                       "Sign In",
-                      style: new TextStyle(fontSize: 24),
+                      style: new TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 20),
                     Form(
                       key: _formKey,
                       child: Column(
                         children: [
+                          const Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Email",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 5),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(horizontal: 40),
                             child: TextFormField(
                               controller: ctrlEmail,
                               keyboardType: TextInputType.emailAddress,
-                              scrollPadding: EdgeInsets.only(bottom: 40),
+                              scrollPadding: EdgeInsets.only(bottom: 70),
                               decoration: InputDecoration(
-                                labelText: "Email",
+                                labelText: "mail@website.com",
                                 prefixIcon:
                                     const Icon(Icons.mail_outline_rounded),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
+                                filled: true,
+                                fillColor: Colors.grey[100],
                               ),
                               autovalidateMode:
                                   AutovalidateMode.onUserInteraction,
@@ -86,18 +104,33 @@ class _LoginState extends State<Login> {
                           const SizedBox(
                             height: 16,
                           ),
+                          const Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Password",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 5),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(horizontal: 40),
                             child: TextFormField(
                               scrollPadding: const EdgeInsets.only(bottom: 40),
                               controller: ctrlPass,
                               obscureText: isVisible,
                               decoration: InputDecoration(
-                                  labelText: "Password",
+                                  labelText: "Min. 6 Character",
                                   prefixIcon: const Icon(Icons.vpn_key),
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                   ),
+                                  filled: true,
+                                  fillColor: Colors.grey[100],
                                   suffixIcon: GestureDetector(
                                     onTap: () {
                                       setState(() {
@@ -118,17 +151,27 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                           const SizedBox(
-                            height: 24,
+                            height: 10,
                           ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(context, Register.routeName);
-                            },
-                            child: const Text(
-                              'Sign Up',
-                              textAlign: TextAlign.left,
-                              style: TextStyle(color: Colors.blue),
-                            ),
+                          Align(
+                              alignment: Alignment.topLeft,
+                              child: Padding(
+                                padding: EdgeInsets.only(left: 70),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        context, Register.routeName);
+                                  },
+                                  child: const Text(
+                                    'Don\'t have an account?',
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        color: Colors.blue, fontSize: 14),
+                                  ),
+                                ),
+                              )),
+                          const SizedBox(
+                            height: 10,
                           ),
                           ElevatedButton.icon(
                             onPressed: () async {

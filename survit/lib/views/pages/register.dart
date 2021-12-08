@@ -35,7 +35,7 @@ class _RegisterState extends State<Register> {
                 height: 40.0,
               ),
               Container(
-                height: 580,
+                height: 660,
                 decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -49,7 +49,8 @@ class _RegisterState extends State<Register> {
                     ),
                     Text(
                       "Register",
-                      style: new TextStyle(fontSize: 24),
+                      style: new TextStyle(
+                          fontSize: 28, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
                       height: 20,
@@ -58,13 +59,30 @@ class _RegisterState extends State<Register> {
                       key: _formKey,
                       child: Column(
                         children: [
+                          const Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "First Name",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(horizontal: 40),
                             child: TextFormField(
                               keyboardType: TextInputType.name,
                               scrollPadding: EdgeInsets.only(bottom: 40),
                               decoration: InputDecoration(
-                                labelText: "First Name",
+                                contentPadding:
+                                    EdgeInsets.symmetric(vertical: 10),
+                                labelText: "Ardian",
                                 prefixIcon: const Icon(Icons.person),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -75,13 +93,30 @@ class _RegisterState extends State<Register> {
                           const SizedBox(
                             height: 16,
                           ),
+                          const Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Last Name",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(horizontal: 40),
                             child: TextFormField(
                               keyboardType: TextInputType.name,
                               scrollPadding: EdgeInsets.only(bottom: 80),
                               decoration: InputDecoration(
-                                labelText: "Last Name",
+                                contentPadding:
+                                    EdgeInsets.symmetric(vertical: 10),
+                                labelText: "Kurniawan",
                                 prefixIcon: const Icon(Icons.person_outline),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -92,14 +127,31 @@ class _RegisterState extends State<Register> {
                           const SizedBox(
                             height: 16,
                           ),
+                          const Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Email",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(horizontal: 40),
                             child: TextFormField(
                               controller: ctrlEmail,
                               keyboardType: TextInputType.emailAddress,
                               scrollPadding: EdgeInsets.only(bottom: 80),
                               decoration: InputDecoration(
-                                labelText: "Email",
+                                contentPadding:
+                                    EdgeInsets.symmetric(vertical: 10),
+                                labelText: "mail@website.com",
                                 prefixIcon:
                                     const Icon(Icons.mail_outline_rounded),
                                 border: OutlineInputBorder(
@@ -124,13 +176,30 @@ class _RegisterState extends State<Register> {
                           const SizedBox(
                             height: 16,
                           ),
+                          const Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Phone Number",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(horizontal: 40),
                             child: TextFormField(
                               keyboardType: TextInputType.phone,
                               scrollPadding: EdgeInsets.only(bottom: 40),
                               decoration: InputDecoration(
-                                labelText: "Phone Number",
+                                contentPadding:
+                                    EdgeInsets.symmetric(vertical: 10),
+                                labelText: "12345678",
                                 prefixIcon: const Icon(Icons.call),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -141,14 +210,31 @@ class _RegisterState extends State<Register> {
                           const SizedBox(
                             height: 16,
                           ),
+                          const Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Password",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(horizontal: 40),
                             child: TextFormField(
                               scrollPadding: EdgeInsets.only(bottom: 40),
                               controller: ctrlPass,
                               obscureText: isVisible,
                               decoration: InputDecoration(
-                                  labelText: "Password",
+                                  contentPadding:
+                                      EdgeInsets.symmetric(vertical: 10),
+                                  labelText: "Min. 6 Characters",
                                   prefixIcon: const Icon(Icons.vpn_key),
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
@@ -173,32 +259,43 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                           const SizedBox(
-                            height: 16,
+                            height: 20,
                           ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.pop(context, Login.routeName);
-                            },
-                            child: const Text(
-                              'Already Have an Account?',
-                              textAlign: TextAlign.left,
-                              style: TextStyle(color: Colors.blue),
-                            ),
-                          ),
-                          ElevatedButton.icon(
-                            onPressed: () async {
-                              if (_formKey.currentState!.validate()) {
-                                setState(() {
-                                  isLoading = true;
-                                });
-                                Navigator.pushReplacementNamed(
-                                    context, Login.routeName);
-                              }
-                            },
-                            icon: const Icon(Icons.login_rounded),
-                            label: const Text("Register"),
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.blue, elevation: 0),
+                          Row(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: 40),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.pop(context, Login.routeName);
+                                  },
+                                  child: const Text(
+                                    'Already Have an Account?',
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        color: Colors.blue, fontSize: 14),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 60,
+                              ),
+                              ElevatedButton.icon(
+                                onPressed: () async {
+                                  if (_formKey.currentState!.validate()) {
+                                    setState(() {
+                                      isLoading = true;
+                                    });
+                                    Navigator.pushReplacementNamed(
+                                        context, Login.routeName);
+                                  }
+                                },
+                                icon: const Icon(Icons.login_rounded),
+                                label: const Text("Register"),
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.blue, elevation: 0),
+                              ),
+                            ],
                           ),
                         ],
                       ),

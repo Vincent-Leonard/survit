@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const Login(),
         Login.routeName: (context) => const Login(),
         Register.routeName: (context) => const Register(),
+        Home.routeName: (context) => const Home(),
       },
     );
   }
