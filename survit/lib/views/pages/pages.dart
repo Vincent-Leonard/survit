@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:survit/constants/color_constant.dart';
 import 'package:survit/constants/my_icons.dart';
@@ -16,3 +17,4 @@ part 'register.dart';
 part 'survey_detail.dart';
 part 'survey.dart';
 part 'splash.dart';
+part 'menu.dart';

@@ -178,6 +178,8 @@ class _LoginState extends State<Login> {
                               if (_formKey.currentState!.validate()) {
                                 setState(() {
                                   isLoading = true;
+                                  Navigator.pushReplacementNamed(
+                                      context, Menu.routeName);
                                 });
                               }
                             },

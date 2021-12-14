@@ -31,6 +31,7 @@ dependencies:
   email_validator: ^2.0.1
   flutter:
     sdk: flutter
+  flutter_inappwebview: any
   flutter_svg: ^0.23.0+1
 
 dev_dependencies:

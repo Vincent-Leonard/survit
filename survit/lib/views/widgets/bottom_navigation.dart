@@ -10,6 +10,13 @@ class BottomNavigationSurvit extends StatefulWidget {
 class _BottomNavigationSurvitState extends State<BottomNavigationSurvit> {
   int _selectedIndex = 0;
 
+  final screens = [
+    const Home(),
+    const Survey(),
+    const Point(),
+    const Profile(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,12 +26,28 @@ class _BottomNavigationSurvitState extends State<BottomNavigationSurvit> {
         borderRadius: BorderRadius.circular(24),
       ),
       child: BottomNavigationBar(
+        currentIndex: _selectedIndex,
         items: [
           BottomNavigationBarItem(
               icon: _selectedIndex == 0
-                  ? new SvgPicture.asset('assets/icons/home.svg')
-                  : new SvgPicture.asset('assets/icons/home_colored.svg'))
+                  ? const Icon(Icons.home)
+                  : const Icon(
+                      Icons.home_filled,
+                      color: Colors.blue,
+                    )),
+          BottomNavigationBarItem(
+              icon: _selectedIndex == 1
+                  ? const Icon(Icons.add)
+                  : const Icon(
+                      Icons.add,
+                      color: Colors.blue,
+                    )),
         ],
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
       ),
     );
   }

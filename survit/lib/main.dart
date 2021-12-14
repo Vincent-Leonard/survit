@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
         Login.routeName: (context) => const Login(),
         Register.routeName: (context) => const Register(),
         Home.routeName: (context) => const Home(),
+        Menu.routeName: (context) => Menu(),
+        SurveyDetail.routeName: (context) => const SurveyDetail(),
       },
     );
   }
